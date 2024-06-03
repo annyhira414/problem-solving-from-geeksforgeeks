@@ -35,3 +35,27 @@ function prime(num){
 
 }
 console.log(array.filter(prime));
+
+// calling filter() on non-array object
+
+const arrayLike ={
+    length: 3,
+    0 : "a",
+    1 : "b",
+    2 : "c",
+    3 : "a",
+}
+let ans = Array.prototype.filter.call(arrayLike, (x) => x <= "c");
+
+console.log("my",ans);
+
+const arrayLike1 = {
+    length: 3,
+    0: "a",
+    1: "b",
+    2: "c",
+    3: "a", // ignored by filter() since length is 3
+  };
+  console.log(Array.prototype.filter.call(arrayLike1, (x) => x <= "b"));
+  // [ 'a', 'b' ]
+  
