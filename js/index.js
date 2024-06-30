@@ -59,3 +59,6 @@ const arrayLike1 = {
   console.log(Array.prototype.filter.call(arrayLike1, (x) => x <= "b"));
   // [ 'a', 'b' ]
   
+  const arr = [1,[2,[3,[4,[5]]]]]
+  const flatArr = arr.flat(4);
+  console.log("what is flat? ",flatArr);
